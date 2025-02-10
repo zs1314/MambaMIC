@@ -1,7 +1,8 @@
 <div align="center">
-<img src="assets/msmamba.png" width="1000">
-<h3>MambaMIC: An Efficient Baseline for Microscopic
-Image Classification with State Space Models</h3>
+
+
+<img src="assets/msmamba.png">
+<h3>MambaMIC: An Efficient Baseline for Microscopic Image Classification with State Space Models</h3>
 
 [[`Paper`](https://arxiv.org/abs/2409.07896)] 
 [[`Project Page`]()]
@@ -29,17 +30,19 @@ deep feature interaction and key feature re-localization. Extensive
 benchmarking shows that MambaMIC achieves state-of-the-art
 performance across five datasets.
 
+
 ## Overview
 <p align="center">
   <img src="assets/overview.png" alt="accuracy" width="100%">
 </p>
+
 
 ---
 
 ## 💎Let's Get Started!
 ### `A. Installation`
 
-Note that the code in this repo runs under **Linux** system. We have not tested whether it works under other OS.
+Note that the code in this repo runs under **Linux** system. 
 
 The repo is based on the [VMama repo](https://github.com/MzeroMiko/VMamba), thus you need to install it first. The following installation sequence is taken from the VMamba repo. 
 
@@ -100,7 +103,7 @@ ${DATASET_ROOT}   # Dataset root directory, for example: /home/username/data
 ├── TissueMnist
 ├── MedMf_Colon
 ```
-Or you can download it from here: [baidu](https://pan.baidu.com/s/1VzCz9UOKg0hyZIjvUOR8kA?pwd=1314 )
+Or you can download it from here: [baidu Netdisk](https://pan.baidu.com/s/1VzCz9UOKg0hyZIjvUOR8kA?pwd=1314 )
 
 
 ### `C. Model Training`
@@ -114,7 +117,7 @@ python train.py
 ```bash
 python test.py 
 ```
-🐥: Before training and testing, configure the relevant parameters in the script
+🐥: Before training and testing, configure the relevant parameters in the script. You are better off calculating the mean and std for each data set, which also helps to further improve model performance. `get_means.py`
 
 ## 🔎 Results
 - results in Table 1 of the main paper
@@ -138,8 +141,12 @@ This project is based on VMamba ([paper](https://arxiv.org/abs/2401.10166), [cod
 
 If this code or paper contributes to your research, please kindly consider citing our paper and give this repo ⭐️ 🌝
 ```
-
-
+@article{zou2024microscopic,
+  title={Microscopic-Mamba: Revealing the Secrets of Microscopic Images with Just 4M Parameters},
+  author={Zou, Shun and Zhang, Zhuo and Zou, Yi and Gao, Guangwei},
+  journal={arXiv preprint arXiv:2409.07896},
+  year={2024}
+}
 ```
 
 
