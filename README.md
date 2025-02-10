@@ -1,37 +1,37 @@
 <div align="center">
-<img src="assets/mamba.png" width="1000">
-<h3>Microscopic-Mamba: Revealing the Secrets of Microscopic Images with Only 4M Parameters</h3>
+<img src="assets/msmamba.png" width="1000">
+<h3>MambaMIC: An Efficient Baseline for Microscopic
+Image Classification with State Space Models</h3>
 
-[[`Paper`]()] 
+[[`Paper`](https://arxiv.org/abs/2409.07896)] 
 [[`Project Page`]()]
 
 
 </div>
 
 ## Abstract
-In the field of medical microscopic image classification
-(MIC), CNN-based and Transformer-based models have been
-extensively studied. However, CNNs struggle with modeling
-long-range dependencies, limiting their ability to fully utilize
-semantic information in images. Conversely, Transformers
-are hampered by the complexity of quadratic computations.
-To address these challenges, we propose a model based on
-the Mamba architecture: Microscopic-Mamba. Specifically,
-we designed the Partially Selected Feed Forward Network
-(PSFFN) to replace the last linear layer of the Visual State
-Space Module (VSSM), enhancing Mamba’s local feature
-extraction capabilities. Additionally, we introduced the Mod-
-ulation Interaction Feature Aggregation (MIFA) module to
-effectively modulate and dynamically aggregate global and
-local features. We also incorporated a parallel VSSM mech-
-anism to improve inter-channel information interaction while
-reducing the number of parameters. Extensive experiments
-have demonstrated that our method achieves state-of-the-art
-performance on five public datasets.
+In recent years, CNN and Transformer-based methods have made significant progress in Microscopic Image Classification (MIC). However, existing approaches still face the dilemma
+between global modeling and efficient computation. While the
+Selective State Space Model (SSM) can simulate long-range
+dependencies with linear complexity, it still encounters challenges
+in MIC, such as local pixel forgetting, channel redundancy, and
+lack of local perception. To address these issues, we propose
+a simple yet efficient vision backbone for MIC tasks, named
+MambaMIC. Specifically, we introduce a Local-Global dualbranch aggregation module: the MambaMIC Block, designed
+to effectively capture and fuse local connectivity and global
+dependencies. In the local branch, we use local convolutions
+to capture pixel similarity, mitigating local pixel forgetting and
+enhancing perception. In the global branch, SSM extracts global
+dependencies, while Locally Aware Enhanced Filter reduces
+channel redundancy and local pixel forgetting. Additionally, we
+design a Feature Modulation Interaction Aggregation Module for
+deep feature interaction and key feature re-localization. Extensive
+benchmarking shows that MambaMIC achieves state-of-the-art
+performance across five datasets.
 
 ## Overview
 <p align="center">
-  <img src="assets/overview.jpg" alt="accuracy" width="100%">
+  <img src="assets/overview.png" alt="accuracy" width="100%">
 </p>
 
 ---
@@ -47,8 +47,8 @@ The repo is based on the [VMama repo](https://github.com/MzeroMiko/VMamba), thus
 
 Clone this repository and navigate to the project directory:
 ```bash
-git clone https://github.com/ChenHongruixuan/MambaCD.git
-cd msmamba
+git clone https://github.com/zs1314/MambaMIC.git
+cd MambaMIC
 ```
 
 
@@ -59,8 +59,8 @@ It is recommended to set up a conda environment and installing dependencies via 
 ***Create and activate a new conda environment***
 
 ```bash
-conda create -n msmamba
-conda activate msmamba
+conda create -n MambaMIC
+conda activate MambaMIC
 ```
 
 ***Install dependencies***
@@ -72,7 +72,7 @@ cd kernels/selective_scan && pip install .
 
 ### `B. Data Preparation`
 
-The three datasets [RPE](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760937/), [MHIST](https://bmirds.github.io/MHIST/) , [SARS](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets) ,[TissueMnist](https://medmnist.com/) and [MedMf_colon](https://medfm2023.grand-challenge.org/medfm2023/) are used for MIC experiments. Please download them and make them have the following folder/file structure:
+The five datasets [RPE](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760937/), [MHIST](https://bmirds.github.io/MHIST/) , [SARS](https://lhncbc.nlm.nih.gov/LHC-downloads/downloads.html#malaria-datasets) ,[TissueMnist](https://medmnist.com/) and [MedMf_colon](https://medfm2023.grand-challenge.org/medfm2023/) are used for MIC experiments. Please download them and make them have the following folder/file structure:
 ```
 ${DATASET_ROOT}   # Dataset root directory, for example: /home/username/data
 ├── RPE
@@ -116,7 +116,18 @@ python test.py
 ```
 🐥: Before training and testing, configure the relevant parameters in the script
 
+## 🔎 Results
+- results in Table 1 of the main paper
 
+<p align="center">
+  <img width="900" src="assets/T1.png">
+</p>
+
+- results in Figure 1 of the main paper
+
+<p align="center">
+  <img width="900" src="assets/F1.png">
+</p>
 
 ## 🤝Acknowledgments
 This project is based on VMamba ([paper](https://arxiv.org/abs/2401.10166), [code](https://github.com/MzeroMiko/VMamba)). Thanks for their excellent works!!
