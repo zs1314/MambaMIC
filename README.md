@@ -5,7 +5,7 @@
 <h3>MambaMIC: An Efficient Baseline for Microscopic Image Classification with State Space Models</h3>
 
 [[`Paper`](https://arxiv.org/abs/2409.07896)] 
-[[`Project Page`]()]
+[[`Project Page`](https://zs1314.github.io/MambaMIC/)]
 
 
 </div>
@@ -142,10 +142,10 @@ This project is based on VMamba ([paper](https://arxiv.org/abs/2401.10166), [cod
 If this code or paper contributes to your research, please kindly consider citing our paper and give this repo ⭐️ 🌝
 ```
 @article{zou2024microscopic,
-  title={Microscopic-Mamba: Revealing the Secrets of Microscopic Images with Just 4M Parameters},
+  title={MambaMIC: An Efficient Baseline for Microscopic Image Classification with State Space Models},
   author={Zou, Shun and Zhang, Zhuo and Zou, Yi and Gao, Guangwei},
-  journal={arXiv preprint arXiv:2409.07896},
-  year={2024}
+  journal={ICME},
+  year={2025}
 }
 ```
 
